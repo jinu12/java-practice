@@ -1,0 +1,43 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#WhiteBtn1 {
+	-fx-background-image : url('easyA.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}
+#WhiteBtn2 {
+	-fx-background-image : url('easy4.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}
+#BlackBtn1 {
+	-fx-background-image : url('easys.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}
+#BlackBtn2 {
+	-fx-background-image : url('easy5.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}
+#Reset {
+	-fx-background-image : url('resetbutton.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}
+#home {
+	-fx-background-image : url('home.PNG');
+	-fx-background-repeat : no-repeat;
+	-fx-background-color : transparent;
+	-fx-background-size : 160px 80px;
+	-fx-background-position : 50%;
+}

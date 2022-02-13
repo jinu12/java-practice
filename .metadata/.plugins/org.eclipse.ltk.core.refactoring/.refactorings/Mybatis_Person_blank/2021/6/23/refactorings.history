@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;personMapper.xml&apos; to &apos;JAVA0601/src&apos;&#x0D;&#x0A;- Original project: &apos;Mybatis_Person_blank&apos;&#x0D;&#x0A;- Destination element: &apos;JAVA0601/src&apos;&#x0D;&#x0A;- Original element: &apos;personMapper.xml&apos;" description="Copy file" destination="=JAVA0601/src" element1="src/personMapper.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1622611191385" units="0" version="1.0"/>
+</session>

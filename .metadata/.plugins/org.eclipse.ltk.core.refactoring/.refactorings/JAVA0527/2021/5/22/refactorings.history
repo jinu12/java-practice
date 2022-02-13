@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JAVA0527/src/personMapper.xml&apos; to &apos;studentMapper.xml&apos;" description="Rename resource &apos;personMapper.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/personMapper.xml" name="studentMapper.xml" stamp="1622175568313" updateReferences="true"/>
+</session>

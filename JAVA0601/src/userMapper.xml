@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="user.dao.UserMapper">
+
+<!-- 회원 정보 저장 -->
+<insert id="insertUser" parameterType="user">
+insert into user_tb (
+	num
+	, name
+	, age
+)
+values (
+	user_seq.nextval
+	, #{name}
+	, #{age}
+)
+</insert>
+<!-- pk 조건이 없으면 이 결과는 여러개가 있을수 있다라고 생각할 수 있다. -->
+<!-- 별칭 부분은 변수이름과 일치 시켜줘야한다 idnate -->
+<!-- where 조건이 있으면 parameterType이 있을수도 있다. -->
+<!-- to_char(indate, 'yyyy-MM-dd HH24:MI:SS') as  -->
+<!-- 'Invalid bound statement (not found)' xml 오타 -->
+<!-- invalid error는 특수문자가 잘못되었을때 -->
+<select id="selectUser" resultType="user">
+select 
+	num
+	,name
+	,age
+	,indate
+from
+	user_tb
+order by
+	num desc
+</select>
+<delete id="delectUser" parameterType ="int">
+delete from
+	user_tb
+where
+	num = #{num}
+</delete>
+<select id="selectUserName" parameterType ="string" resultType="user">
+select
+	num
+	,name
+	,age
+	,to_char(indate, 'yyyy-MM-dd') as indate
+from
+	user_tb
+where
+	upper(name) like '%' || upper(#{name}) || '%'
+order by
+	num desc
+</select>
+<update id="updateUser" parameterType = 'user'>
+update
+	user_tb
+set
+	name = #{name}
+	,age = #{age}
+where
+	num = #{num}
+</update>
+<select id="selectByNum" parameterType = 'int' resultType = 'user'>
+select
+	num
+	,name
+	,age
+	,to_char(indate, 'yyyy-MM-dd') as indate
+from
+	user_tb
+where
+	num = #{num}
+</select>
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="board.dao.BoardMapper">
+
+<!-- 글 저장 -->
+<insert id="insertBoard" parameterType="board">
+insert into
+	board_tb(
+		boardnum
+		,name
+		,title
+		,content
+	)values(
+		board_tb_seq.nextval
+		,#{name}
+		,#{title}
+		,#{content}
+	)
+</insert>
+<!-- 글 목록 -->
+<select id="selectBoardAll" resultType="board">
+select
+	boardnum
+	,name
+	,title
+	,hits
+	,to_char(indate, 'yyyy-MM-dd HH24:MI:SS') as indate
+from
+	board_tb
+order by
+	boardnum desc
+</select>
+<!-- 글 1개 읽기 -->
+<select id="selectBoardOne" parameterType ="int" resultType="board" >
+	boardnum
+	,name
+	,title
+	,content
+	,hits
+	,to_char(indate, 'yyyy-MM-dd HH24:MI:SS') as indate
+from
+	board_tb
+where
+	boardnum = #{num}
+ </select> 
+<!-- 글의 조회수 1증가 -->
+<update id="updateBoard">
+update
+	board_tb
+set
+	hits = hits +
+where
+	boardnum = #{num}
+</update> 
+
+
+<!-- 글 삭제 -->
+<delete id="delectBoard" parameterType ="int">
+delete from
+	board_tb
+where
+	boardnum = #{num}
+</delete>
+<select id="selectBoardTitle" parameterType ="string" resultType="board">
+select
+	boardnum
+	,name
+	,title
+	,content
+	,hits
+	,to_char(indate, 'yyyy-MM-dd') as indate
+from
+	board_tb
+where
+	upper(title) like '%' || upper(#{title}) || '%'
+order by
+	boardnum desc
+</select>
+
+<!-- 글의 조회수 1증가 -->
+
+<!-- 글 삭제 -->
+
+<!-- 글 검색 -->
+
+
+</mapper>
